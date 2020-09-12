@@ -5,14 +5,15 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1920,
-    height: 1080,
     resizable: true,
     titleBarStyle: 'hidden',
+    backgroundColor: "#252525",
     webPreferences: {
       nodeIntegration: true,
-    },
+    }
   });
+  mainWindow.setMenuBarVisibility(false);
+  mainWindow.maximize();
 
   mainWindow.loadURL("https://dev.bergflix.de");
   mainWindow.on('closed', () => (mainWindow = null));
